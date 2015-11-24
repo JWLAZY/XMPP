@@ -7,8 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "XMPPManager.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<XMPPStreamDelegate>
 
 //控件
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
@@ -24,12 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //取到单例类里的通讯管道,
+    XMPPStream *stream = [XMPPManager sharedManager].stream;
+    //设置通讯管道的代理为这个控制器
+    [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - XMPPStreamDelegate
+//登陆成功
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
+    NSLog(@"登陆成功");
+    //取到登陆控制器,模态消失
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
@@ -43,5 +51,8 @@
 */
 
 - (IBAction)action4Login:(id)sender {
+    
+    //1. 设置通信管道的目标地址和端口-> 2. 设置通信管道的创建者 -> 3. 链接目标服务器
+    [[XMPPManager sharedManager] xmppManagerLoginWithUserName:self.txt4UserName.text password:self.txt4PassWord.text];
 }
 @end

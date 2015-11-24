@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "XMPPManager.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *txt4UserName;
@@ -39,5 +40,6 @@
 */
 
 - (IBAction)action4Register:(id)sender {
+    [[XMPPManager sharedManager] xmppManagerRegisterWithUserName:self.txt4UserName.text password:self.txt4PassWord.text];
 }
 @end

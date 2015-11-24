@@ -10,5 +10,6 @@
 #define _834XMPP_pch
 
 #import <UIKit/UIKit.h>
+#import "XMPPFramework.h"
 
 #endif /* _834XMPP_pch */
