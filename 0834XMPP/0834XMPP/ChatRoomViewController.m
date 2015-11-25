@@ -23,10 +23,44 @@
 
 @implementation ChatRoomViewController
 
+
+//加载所有消息(通过单例类通过的上下文获取)
+- (void)reloadAllMessage{
+    
+    NSManagedObjectContext *context = [XMPPManager sharedManager].context;
+    
+    //xmppmessageArchiving : 把接收的消息(xmppmessage)进行归档,归档后的数据类型是(
+//    XMPPMessageArchiving_Message_CoreDataObject)
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"XMPPMessageArchiving_Message_CoreDataObject"];
+    
+    //设置断言
+    //查找所有和当前聊天对象一样的message 对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" bareJidStr == %@ ",self.jidChatTo.bare];
+    
+    //让断言生效
+    [fetchRequest setPredicate:predicate];
+    
+    //获取数据
+    NSArray *array = [context executeFetchRequest:fetchRequest error:nil];
+    
+    if (array) {
+        //先移除所有数据源
+        [self.messages removeAllObjects];
+    }
+    
+    //将获取到数据添加到当前数据源中
+    [self.messages addObjectsFromArray:array];
+    
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    
     
     //设置代理
     XMPPStream *stream = [XMPPManager sharedManager].stream;
@@ -35,6 +69,9 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     //通过通知中心来观察键盘的frame 的变化,当键盘frame 发送变化后触发keyboardFrameChange事件
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
+    
+    //加载之前的数据
+    [self reloadAllMessage];
 }
 
 - (void)keyboardFrameChange:(NSNotification *)not{
@@ -70,11 +107,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     //获取到对应的消息
-    XMPPMessage *message = self.messages[indexPath.row];
-    if ([message.to isEqual:self.jidChatTo]) {
+    XMPPMessageArchiving_Message_CoreDataObject *message = self.messages[indexPath.row];
+    //判断是否是自己发出去的.
+    if ([message isOutgoing]) {
         cell.textLabel.text = [NSString stringWithFormat:@"我 : %@",message.body];
     }else{
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@",message.fromStr,message.body];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@",message.bareJidStr,message.body];
     }
     return cell;
 }
@@ -82,22 +120,14 @@
 #pragma mark - XMPPStreamDelegate
 //接收到一条消息
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
-    NSLog(@"接收到一条消息%@",message);
-    //如果聊天消息不是来自当前聊天页面的聊天对象,就什么都不干
-    if (message.from != self.jidChatTo) {
-        return;
-    }
     
-    [self.messages addObject:message];
-    [self.tableView reloadData];
-    
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self reloadAllMessage];
+
 }
 //发送一条消息的回调事件
 - (void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
-    NSLog(@"发送消息成功");
-    [self.messages addObject:message];
-    [self.tableView reloadData];
+    
+    [self reloadAllMessage];
 }
 
 - (IBAction)action4SendMessage:(id)sender {

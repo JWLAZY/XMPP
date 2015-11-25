@@ -86,6 +86,9 @@ static XMPPManager * manager = nil;
         
         //添加代理
         [self.messageArchiving addDelegate:self delegateQueue:dispatch_get_main_queue()];
+        
+        //让我们创建的上下文直接等于消息归档类存储的coredata仓库的上下文
+        self.context = xmacds.mainThreadManagedObjectContext;
     }
     return self;
 }

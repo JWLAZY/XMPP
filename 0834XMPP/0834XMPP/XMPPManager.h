@@ -29,6 +29,12 @@
  */
 @property (nonatomic,strong) XMPPMessageArchiving * messageArchiving;
 
+
+/**
+ *  coredata 上下文,用来获取通过messageArchiving 归档后存储起来的消息
+ */
+@property (nonatomic,strong) NSManagedObjectContext * context;
+
 /**
  *  单例方法
  *
