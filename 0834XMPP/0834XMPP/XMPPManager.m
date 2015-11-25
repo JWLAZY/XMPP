@@ -13,7 +13,7 @@ typedef enum : NSUInteger {
     Connect4Register,
 } ConnectType;//链接目的
 
-@interface XMPPManager ()<XMPPStreamDelegate>
+@interface XMPPManager ()<XMPPStreamDelegate,XMPPRosterDelegate>
 
 //记录登陆密码
 @property (nonatomic,copy) NSString * loginPassword;
@@ -51,6 +51,25 @@ static XMPPManager * manager = nil;
         
         //设置代理,在主线程里面触发回调事件
         [_stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+        
+        
+        //-------------用户花名册---------------------
+        //xmpproster 用来处理和用户相关的一切操作(获取好友列表,添加好友,接收好友请求,同意添加好友,拒绝添加好友)
+        
+        //xmpp 为我们提供的一个coredata 存储器
+        XMPPRosterCoreDataStorage *xrcds = [XMPPRosterCoreDataStorage sharedInstance];
+        
+        //创建roster 花名册时,需要给花名册指定一个数据存储的地方(有就是XMPPRosterCoreDataStorage)
+        self.roster = [[XMPPRoster alloc] initWithRosterStorage:xrcds dispatchQueue:dispatch_get_main_queue()];
+        
+        //在通讯管道中激活花名册
+        //这时就可以通过通讯管道去给服务器发送请求了.
+        //然后roster 的 消息都通过 stream 间接的发给服务器
+        [self.roster activate:self.stream];
+        
+        //添加代理
+        [self.roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
+        
     }
     return self;
 }
@@ -157,5 +176,18 @@ static XMPPManager * manager = nil;
 - (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
     NSLog(@"注册失败 ,error:%@",error);
 }
+
+
+#pragma mark - XMPPRosterDelegate
+
+//接收到好友请求
+- (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
+    NSLog(@"%@",presence);
+    
+    NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+}
+
 
 @end

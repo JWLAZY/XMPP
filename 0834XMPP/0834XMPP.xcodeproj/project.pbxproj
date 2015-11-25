@@ -146,6 +146,8 @@
 		4657942E1C0412A600347852 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4657942D1C0412A600347852 /* LoginViewController.m */; };
 		465794311C0412B600347852 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465794301C0412B600347852 /* RegisterViewController.m */; };
 		465794341C0438F000347852 /* XMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 465794331C0438F000347852 /* XMPPManager.m */; };
+		46AB0BD31C0548DD00FB1249 /* RosterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0BD21C0548DD00FB1249 /* RosterController.m */; };
+		46AB0BD61C05490A00FB1249 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -430,6 +432,10 @@
 		465794301C0412B600347852 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		465794321C0438F000347852 /* XMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPManager.h; path = 0834XMPP/XMPPManager.h; sourceTree = SOURCE_ROOT; };
 		465794331C0438F000347852 /* XMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPManager.m; path = 0834XMPP/XMPPManager.m; sourceTree = SOURCE_ROOT; };
+		46AB0BD11C0548DD00FB1249 /* RosterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosterController.h; sourceTree = "<group>"; };
+		46AB0BD21C0548DD00FB1249 /* RosterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosterController.m; sourceTree = "<group>"; };
+		46AB0BD41C05490A00FB1249 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		7F679D696B870B3D885F7595 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -492,6 +498,10 @@
 				4657942D1C0412A600347852 /* LoginViewController.m */,
 				4657942F1C0412B600347852 /* RegisterViewController.h */,
 				465794301C0412B600347852 /* RegisterViewController.m */,
+				46AB0BD11C0548DD00FB1249 /* RosterController.h */,
+				46AB0BD21C0548DD00FB1249 /* RosterController.m */,
+				46AB0BD41C05490A00FB1249 /* AddFriendViewController.h */,
+				46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */,
 				465792551C04089400347852 /* Main.storyboard */,
 				4657942A1C040E3300347852 /* LoginAndRegister.storyboard */,
 				465792581C04089400347852 /* Assets.xcassets */,
@@ -1470,6 +1480,7 @@
 				465794081C04092900347852 /* XEP_0223.m in Sources */,
 				465794051C04092900347852 /* XMPPAutoTime.m in Sources */,
 				465793B51C04092900347852 /* XMPPParser.m in Sources */,
+				46AB0BD31C0548DD00FB1249 /* RosterController.m in Sources */,
 				465793B41C04092900347852 /* XMPPModule.m in Sources */,
 				4657942E1C0412A600347852 /* LoginViewController.m in Sources */,
 				465793EE1C04092900347852 /* XMPPMessage+XEP_0066.m in Sources */,
@@ -1486,6 +1497,7 @@
 				465793DC1C04092900347852 /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				465793A91C04092900347852 /* XMPPDigestMD5Authentication.m in Sources */,
 				465794021C04092900347852 /* XMPPMessageDeliveryReceipts.m in Sources */,
+				46AB0BD61C05490A00FB1249 /* AddFriendViewController.m in Sources */,
 				465793EF1C04092900347852 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
 				465793B61C04092900347852 /* XMPPPresence.m in Sources */,
 				465793BC1C04092900347852 /* XMPPReconnect.m in Sources */,

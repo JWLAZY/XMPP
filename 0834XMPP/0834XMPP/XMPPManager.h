@@ -19,6 +19,11 @@
 @property (nonatomic,strong) XMPPStream * stream;
 
 /**
+ *  好友花名册,用来处理和好友相关的事件
+ */
+@property (nonatomic,strong) XMPPRoster * roster;
+
+/**
  *  单例方法
  *
  *  @return 单例对象
