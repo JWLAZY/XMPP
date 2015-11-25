@@ -24,6 +24,12 @@
 @property (nonatomic,strong) XMPPRoster * roster;
 
 /**
+ *  消息归档处理类
+ *  程序关闭后,下次打开还可以再次查看以前的聊天记录
+ */
+@property (nonatomic,strong) XMPPMessageArchiving * messageArchiving;
+
+/**
  *  单例方法
  *
  *  @return 单例对象

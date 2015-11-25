@@ -8,6 +8,7 @@
 
 #import "RosterController.h"
 #import "XMPPManager.h"
+#import "ChatRoomViewController.h"
 
 @interface RosterController ()<XMPPRosterDelegate>
 //用来存放所有好友
@@ -77,15 +78,23 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //属性传值
+    //1.判断是cell 还是 bar button item
+    if ([sender class] != [UITableViewCell class]) {
+        return;
+    }
+    //2.获取到点击的cell 的位置
+    NSIndexPath *index = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+    //3. 获取到点击的cell对应位置的XMPPJid
+    XMPPJID *jid = self.rosters[index.row];
+    //4. 将获取的xmppjid 传到下个页面
+    ChatRoomViewController *crvc = [segue destinationViewController];
+    crvc.jidChatTo = jid;
 }
-*/
 
 #pragma mark - XMPPRosterDelegate
 //开始接收好友列表
@@ -105,7 +114,7 @@
     //不刷新tableview ,而是没接收一个好友就插入一个好友
     NSIndexPath *indexpath = nil;
     if (self.rosters.count == 0) {
-        indexpath = [NSIndexPath indexPathForRow:self.rosters.count inSection:0];
+        return;
     }else{
         indexpath = [NSIndexPath indexPathForRow:self.rosters.count - 1 inSection:0];
     }
@@ -125,12 +134,6 @@
     }
     return _rosters;
 }
-
-
-
-
-
-
 
 //接收到好友请求
 - (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{

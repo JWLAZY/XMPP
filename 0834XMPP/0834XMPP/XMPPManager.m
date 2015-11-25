@@ -70,6 +70,22 @@ static XMPPManager * manager = nil;
         //添加代理
         [self.roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
         
+        
+        //----------------初始化 XMPPMessageArchiving-----
+        
+        //xmppMessageArchiving 主要功能: 1. 通过通讯管道获取到服务器发送过来的消息,2.讲消息存储到指定的XMPPMessageArchivingCoreDataStorage
+        
+        //xmpp 为我们提供的一个存储聊天消息的coredata仓库
+        XMPPMessageArchivingCoreDataStorage *xmacds = [XMPPMessageArchivingCoreDataStorage sharedInstance];
+        
+        //初始化时,需要给这个归档类指定一个存储仓库.
+        self.messageArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:xmacds dispatchQueue:dispatch_get_main_queue()];
+        
+        //在通讯管道中激活消息归档类
+        [self.messageArchiving activate:self.stream];
+        
+        //添加代理
+        [self.messageArchiving addDelegate:self delegateQueue:dispatch_get_main_queue()];
     }
     return self;
 }

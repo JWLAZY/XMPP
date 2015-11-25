@@ -99,7 +99,7 @@
         <!--聊天-->
         <scene sceneID="FQq-od-Pkk">
             <objects>
-                <viewController id="YFK-Uf-t24" sceneMemberID="viewController">
+                <viewController id="YFK-Uf-t24" customClass="ChatRoomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2CS-zT-0Lh"/>
                         <viewControllerLayoutGuide type="bottom" id="NRx-u9-bDW"/>
@@ -107,11 +107,72 @@
                     <view key="view" contentMode="scaleToFill" id="04Y-xS-pha">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYf-5l-Saj">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0o-e7-4oO">
+                                        <rect key="frame" x="10" y="10" width="310" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="YFK-Uf-t24" id="baW-yM-6Hs"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vau-mr-HVM">
+                                        <rect key="frame" x="335" y="10" width="30" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="S1b-KD-fdt"/>
+                                        </constraints>
+                                        <state key="normal" title="发送">
+                                            <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="action4SendMessage:" destination="YFK-Uf-t24" eventType="touchUpInside" id="8Wu-m0-Oa3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1837341156" green="0.3186959768" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vau-mr-HVM" firstAttribute="leading" secondItem="D0o-e7-4oO" secondAttribute="trailing" constant="15" id="107-ng-ton"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vau-mr-HVM" secondAttribute="trailing" constant="10" id="OrL-gp-Khb"/>
+                                    <constraint firstAttribute="bottom" secondItem="D0o-e7-4oO" secondAttribute="bottom" constant="10" id="P7q-8r-Kj9"/>
+                                    <constraint firstItem="D0o-e7-4oO" firstAttribute="top" secondItem="fYf-5l-Saj" secondAttribute="top" constant="10" id="XuQ-sW-Vr3"/>
+                                    <constraint firstAttribute="height" constant="70" id="dcl-yp-ayK"/>
+                                    <constraint firstItem="Vau-mr-HVM" firstAttribute="top" secondItem="fYf-5l-Saj" secondAttribute="top" constant="10" id="e7W-rC-VbC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vau-mr-HVM" secondAttribute="bottom" constant="10" id="lm9-Qj-hCV"/>
+                                    <constraint firstItem="D0o-e7-4oO" firstAttribute="leading" secondItem="fYf-5l-Saj" secondAttribute="leading" constant="10" id="ogt-Kq-OBS"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-ta-dR3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="533"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NRx-u9-bDW" firstAttribute="top" secondItem="fYf-5l-Saj" secondAttribute="bottom" id="4bl-lW-Sgy"/>
+                            <constraint firstItem="FPv-ta-dR3" firstAttribute="leading" secondItem="04Y-xS-pha" secondAttribute="leading" id="5E2-1U-PD8"/>
+                            <constraint firstAttribute="trailing" secondItem="FPv-ta-dR3" secondAttribute="trailing" id="Aoc-sf-FGa"/>
+                            <constraint firstItem="FPv-ta-dR3" firstAttribute="top" secondItem="2CS-zT-0Lh" secondAttribute="bottom" id="Tks-BV-i29"/>
+                            <constraint firstItem="fYf-5l-Saj" firstAttribute="top" secondItem="FPv-ta-dR3" secondAttribute="bottom" id="c3s-1V-GR5"/>
+                            <constraint firstAttribute="trailing" secondItem="fYf-5l-Saj" secondAttribute="trailing" id="onp-9V-L8Z"/>
+                            <constraint firstItem="fYf-5l-Saj" firstAttribute="leading" secondItem="04Y-xS-pha" secondAttribute="leading" id="ykk-je-39T"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="聊天" id="MVk-uw-J3e"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="constraint4bottomFromSuper" destination="4bl-lW-Sgy" id="Uys-Pl-kYB"/>
+                        <outlet property="tableView" destination="FPv-ta-dR3" id="1Kx-nN-1Bw"/>
+                        <outlet property="txt4Chat" destination="D0o-e7-4oO" id="ush-zE-l6i"/>
+                        <outlet property="view4ChatContent" destination="fYf-5l-Saj" id="Cel-pu-PQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iog-pa-gJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
