@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0644AC4BA1909F31A36A59D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE77633839EEF757F51B79 /* libPods.a */; };
+		0229C2EFD1CC06D5A8E72EF6 /* libPods-0834XMPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F59DC6A5B3EDFD276A9E063 /* libPods-0834XMPP.a */; };
+		46008DA01D7579300040107A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008D9F1D7579300040107A /* ProfileViewController.m */; };
+		46008DBF1D757A850040107A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DB61D757A850040107A /* ChatRoomViewController.m */; };
+		46008DC01D757A850040107A /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DBC1D757A850040107A /* AddFriendViewController.m */; };
+		46008DC11D757A850040107A /* RosterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DBE1D757A850040107A /* RosterController.m */; };
+		46008DC41D757A980040107A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DC31D757A980040107A /* LoginViewController.m */; };
+		46008DC71D757AA30040107A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DC61D757AA30040107A /* RegisterViewController.m */; };
+		46008DCB1D757AB80040107A /* XMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46008DCA1D757AB80040107A /* XMPPManager.m */; };
 		4657924E1C04089400347852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4657924D1C04089400347852 /* main.m */; };
 		465792511C04089400347852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 465792501C04089400347852 /* AppDelegate.m */; };
-		465792541C04089400347852 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465792531C04089400347852 /* ViewController.m */; };
 		465792571C04089400347852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465792551C04089400347852 /* Main.storyboard */; };
 		465792591C04089400347852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465792581C04089400347852 /* Assets.xcassets */; };
 		4657925C1C04089400347852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4657925A1C04089400347852 /* LaunchScreen.storyboard */; };
@@ -143,23 +149,28 @@
 		465794261C040ABC00347852 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 465794251C040ABC00347852 /* libxml2.tbd */; };
 		465794281C040AC200347852 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465794271C040AC200347852 /* CoreData.framework */; };
 		4657942B1C040E3300347852 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4657942A1C040E3300347852 /* LoginAndRegister.storyboard */; };
-		4657942E1C0412A600347852 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4657942D1C0412A600347852 /* LoginViewController.m */; };
-		465794311C0412B600347852 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465794301C0412B600347852 /* RegisterViewController.m */; };
-		465794341C0438F000347852 /* XMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 465794331C0438F000347852 /* XMPPManager.m */; };
-		46AB0BD31C0548DD00FB1249 /* RosterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0BD21C0548DD00FB1249 /* RosterController.m */; };
-		46AB0BD61C05490A00FB1249 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */; };
-		46AB0BD91C058A1500FB1249 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0BD81C058A1500FB1249 /* ChatRoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23CE77633839EEF757F51B79 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		23DD3C3C08DEBE6969C7F07E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2F59DC6A5B3EDFD276A9E063 /* libPods-0834XMPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-0834XMPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46008D9E1D7579300040107A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		46008D9F1D7579300040107A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		46008DB51D757A850040107A /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomViewController.h; sourceTree = "<group>"; };
+		46008DB61D757A850040107A /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomViewController.m; sourceTree = "<group>"; };
+		46008DBB1D757A850040107A /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		46008DBC1D757A850040107A /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		46008DBD1D757A850040107A /* RosterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosterController.h; sourceTree = "<group>"; };
+		46008DBE1D757A850040107A /* RosterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosterController.m; sourceTree = "<group>"; };
+		46008DC21D757A980040107A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		46008DC31D757A980040107A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		46008DC51D757AA30040107A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		46008DC61D757AA30040107A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		46008DC91D757AB80040107A /* XMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPManager.h; sourceTree = "<group>"; };
+		46008DCA1D757AB80040107A /* XMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPManager.m; sourceTree = "<group>"; };
 		465792491C04089400347852 /* 0834XMPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0834XMPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657924D1C04089400347852 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4657924F1C04089400347852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		465792501C04089400347852 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		465792521C04089400347852 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		465792531C04089400347852 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		465792561C04089400347852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		465792581C04089400347852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4657925B1C04089400347852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -427,19 +438,8 @@
 		465794271C040AC200347852 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		465794291C040B8600347852 /* 0834XMPP.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 0834XMPP.pch; sourceTree = "<group>"; };
 		4657942A1C040E3300347852 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
-		4657942C1C0412A600347852 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		4657942D1C0412A600347852 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		4657942F1C0412B600347852 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		465794301C0412B600347852 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		465794321C0438F000347852 /* XMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMPPManager.h; path = 0834XMPP/XMPPManager.h; sourceTree = SOURCE_ROOT; };
-		465794331C0438F000347852 /* XMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMPPManager.m; path = 0834XMPP/XMPPManager.m; sourceTree = SOURCE_ROOT; };
-		46AB0BD11C0548DD00FB1249 /* RosterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosterController.h; sourceTree = "<group>"; };
-		46AB0BD21C0548DD00FB1249 /* RosterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosterController.m; sourceTree = "<group>"; };
-		46AB0BD41C05490A00FB1249 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
-		46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
-		46AB0BD71C058A1500FB1249 /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomViewController.h; sourceTree = "<group>"; };
-		46AB0BD81C058A1500FB1249 /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomViewController.m; sourceTree = "<group>"; };
-		7F679D696B870B3D885F7595 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		75983290AD2337C5C7534B86 /* Pods-0834XMPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0834XMPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP.release.xcconfig"; sourceTree = "<group>"; };
+		8AD0597D6BA6CDE745A0BBDE /* Pods-0834XMPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0834XMPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,19 +451,207 @@
 				465794261C040ABC00347852 /* libxml2.tbd in Frameworks */,
 				465794241C040AB100347852 /* libresolv.tbd in Frameworks */,
 				465794221C04092900347852 /* libidn.a in Frameworks */,
-				0644AC4BA1909F31A36A59D3 /* libPods.a in Frameworks */,
+				0229C2EFD1CC06D5A8E72EF6 /* libPods-0834XMPP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2180A81A77405E56F65A39E1 /* Frameworks */ = {
+		3F17C58A327E4C7FAD88E52B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23CE77633839EEF757F51B79 /* libPods.a */,
+				2F59DC6A5B3EDFD276A9E063 /* libPods-0834XMPP.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46008D991D7579190040107A /* Sences */ = {
+			isa = PBXGroup;
+			children = (
+				46008DB11D757A850040107A /* Chat */,
+				46008DB71D757A850040107A /* Roster */,
+				46008DA91D7579A90040107A /* Login */,
+				46008DAD1D7579A90040107A /* Register */,
+				46008D9A1D7579190040107A /* Profile */,
+			);
+			path = Sences;
+			sourceTree = "<group>";
+		};
+		46008D9A1D7579190040107A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				46008D9B1D7579190040107A /* Model */,
+				46008D9C1D7579190040107A /* View */,
+				46008D9D1D7579190040107A /* ViewController */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		46008D9B1D7579190040107A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46008D9C1D7579190040107A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46008D9D1D7579190040107A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46008D9E1D7579300040107A /* ProfileViewController.h */,
+				46008D9F1D7579300040107A /* ProfileViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46008DA91D7579A90040107A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46008DAA1D7579A90040107A /* Model */,
+				46008DAB1D7579A90040107A /* View */,
+				46008DAC1D7579A90040107A /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		46008DAA1D7579A90040107A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46008DAB1D7579A90040107A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46008DAC1D7579A90040107A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46008DC21D757A980040107A /* LoginViewController.h */,
+				46008DC31D757A980040107A /* LoginViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46008DAD1D7579A90040107A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				46008DAE1D7579A90040107A /* Model */,
+				46008DAF1D7579A90040107A /* View */,
+				46008DB01D7579A90040107A /* ViewController */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		46008DAE1D7579A90040107A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46008DAF1D7579A90040107A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46008DB01D7579A90040107A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46008DC51D757AA30040107A /* RegisterViewController.h */,
+				46008DC61D757AA30040107A /* RegisterViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46008DB11D757A850040107A /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				46008DB21D757A850040107A /* Model */,
+				46008DB31D757A850040107A /* View */,
+				46008DB41D757A850040107A /* ViewController */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		46008DB21D757A850040107A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46008DB31D757A850040107A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46008DB41D757A850040107A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46008DB51D757A850040107A /* ChatRoomViewController.h */,
+				46008DB61D757A850040107A /* ChatRoomViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46008DB71D757A850040107A /* Roster */ = {
+			isa = PBXGroup;
+			children = (
+				46008DB81D757A850040107A /* Model */,
+				46008DB91D757A850040107A /* View */,
+				46008DBA1D757A850040107A /* ViewController */,
+			);
+			path = Roster;
+			sourceTree = "<group>";
+		};
+		46008DB81D757A850040107A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46008DB91D757A850040107A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46008DBA1D757A850040107A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				46008DBB1D757A850040107A /* AddFriendViewController.h */,
+				46008DBC1D757A850040107A /* AddFriendViewController.m */,
+				46008DBD1D757A850040107A /* RosterController.h */,
+				46008DBE1D757A850040107A /* RosterController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		46008DC81D757AB80040107A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				46008DC91D757AB80040107A /* XMPPManager.h */,
+				46008DCA1D757AB80040107A /* XMPPManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		465792401C04089400347852 = {
@@ -474,8 +662,8 @@
 				465794231C040AB100347852 /* libresolv.tbd */,
 				4657924B1C04089400347852 /* 0834XMPP */,
 				4657924A1C04089400347852 /* Products */,
-				9A167D67E54CA4CAFBC895B4 /* Pods */,
-				2180A81A77405E56F65A39E1 /* Frameworks */,
+				8C6303A347DDE7C23394784B /* Pods */,
+				3F17C58A327E4C7FAD88E52B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -490,23 +678,11 @@
 		4657924B1C04089400347852 /* 0834XMPP */ = {
 			isa = PBXGroup;
 			children = (
-				465794321C0438F000347852 /* XMPPManager.h */,
-				465794331C0438F000347852 /* XMPPManager.m */,
+				46008DC81D757AB80040107A /* Manager */,
+				46008D991D7579190040107A /* Sences */,
 				465792631C04092900347852 /* XMPP */,
 				4657924F1C04089400347852 /* AppDelegate.h */,
 				465792501C04089400347852 /* AppDelegate.m */,
-				465792521C04089400347852 /* ViewController.h */,
-				465792531C04089400347852 /* ViewController.m */,
-				4657942C1C0412A600347852 /* LoginViewController.h */,
-				4657942D1C0412A600347852 /* LoginViewController.m */,
-				4657942F1C0412B600347852 /* RegisterViewController.h */,
-				465794301C0412B600347852 /* RegisterViewController.m */,
-				46AB0BD11C0548DD00FB1249 /* RosterController.h */,
-				46AB0BD21C0548DD00FB1249 /* RosterController.m */,
-				46AB0BD41C05490A00FB1249 /* AddFriendViewController.h */,
-				46AB0BD51C05490A00FB1249 /* AddFriendViewController.m */,
-				46AB0BD71C058A1500FB1249 /* ChatRoomViewController.h */,
-				46AB0BD81C058A1500FB1249 /* ChatRoomViewController.m */,
 				465792551C04089400347852 /* Main.storyboard */,
 				4657942A1C040E3300347852 /* LoginAndRegister.storyboard */,
 				465792581C04089400347852 /* Assets.xcassets */,
@@ -1271,11 +1447,11 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
-		9A167D67E54CA4CAFBC895B4 /* Pods */ = {
+		8C6303A347DDE7C23394784B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				23DD3C3C08DEBE6969C7F07E /* Pods.debug.xcconfig */,
-				7F679D696B870B3D885F7595 /* Pods.release.xcconfig */,
+				8AD0597D6BA6CDE745A0BBDE /* Pods-0834XMPP.debug.xcconfig */,
+				75983290AD2337C5C7534B86 /* Pods-0834XMPP.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1287,12 +1463,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 465792601C04089400347852 /* Build configuration list for PBXNativeTarget "0834XMPP" */;
 			buildPhases = (
-				87003E6045CB8407E0E1B44D /* Check Pods Manifest.lock */,
+				D1B5E3E8A3AFBE1406BF2110 /* [CP] Check Pods Manifest.lock */,
 				465792451C04089400347852 /* Sources */,
 				465792461C04089400347852 /* Frameworks */,
 				465792471C04089400347852 /* Resources */,
-				76B18280899F099527AE328A /* Embed Pods Frameworks */,
-				E2C1C45C92E8E256E17B18D8 /* Copy Pods Resources */,
+				4AB5BD10A0266DB3C71FBE13 /* [CP] Embed Pods Frameworks */,
+				8096AFDFEABE022CE7C443AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1353,49 +1529,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		76B18280899F099527AE328A /* Embed Pods Frameworks */ = {
+		4AB5BD10A0266DB3C71FBE13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		87003E6045CB8407E0E1B44D /* Check Pods Manifest.lock */ = {
+		8096AFDFEABE022CE7C443AF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1B5E3E8A3AFBE1406BF2110 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E2C1C45C92E8E256E17B18D8 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1409,7 +1585,6 @@
 				465794191C04092900347852 /* DDTTYLogger.m in Sources */,
 				465793F51C04092900347852 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				465793D11C04092900347852 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
-				465794341C0438F000347852 /* XMPPManager.m in Sources */,
 				465793ED1C04092900347852 /* XMPPIQ+XEP_0066.m in Sources */,
 				465794111C04092900347852 /* XMPPIDTracker.m in Sources */,
 				465793F41C04092900347852 /* XMPPCapabilities.xcdatamodel in Sources */,
@@ -1422,9 +1597,9 @@
 				465793CC1C04092900347852 /* XMPPPrivacy.m in Sources */,
 				465793F21C04092900347852 /* XMPPTransports.m in Sources */,
 				465793BB1C04092900347852 /* XMPPProcessOne.m in Sources */,
+				46008DC01D757A850040107A /* AddFriendViewController.m in Sources */,
 				465793FB1C04092900347852 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				465793EB1C04092900347852 /* XMPPPubSub.m in Sources */,
-				46AB0BD91C058A1500FB1249 /* ChatRoomViewController.m in Sources */,
 				465793E61C04092900347852 /* XMPPvCardTempModule.m in Sources */,
 				465793EA1C04092900347852 /* XMPPIQ+XEP_0060.m in Sources */,
 				465793E11C04092900347852 /* XMPPvCardTempAdr.m in Sources */,
@@ -1447,6 +1622,7 @@
 				465794181C04092900347852 /* DDLog.m in Sources */,
 				465794141C04092900347852 /* GCDAsyncSocket.m in Sources */,
 				465793A81C04092900347852 /* XMPPDeprecatedPlainAuthentication.m in Sources */,
+				46008DC11D757A850040107A /* RosterController.m in Sources */,
 				465793F31C04092900347852 /* NSString+XEP_0106.m in Sources */,
 				465793B71C04092900347852 /* XMPPStream.m in Sources */,
 				465793DD1C04092900347852 /* XMPPvCardCoreDataStorage.m in Sources */,
@@ -1470,11 +1646,9 @@
 				465793CA1C04092900347852 /* XMPPIQ+LastActivity.m in Sources */,
 				465793D21C04092900347852 /* XMPPRoomHybridStorage.m in Sources */,
 				465793AC1C04092900347852 /* NSData+XMPP.m in Sources */,
-				465792541C04089400347852 /* ViewController.m in Sources */,
 				4657940F1C04092900347852 /* GCDMulticastDelegate.m in Sources */,
 				465792511C04089400347852 /* AppDelegate.m in Sources */,
 				465793C81C04092900347852 /* XMPPIQ+JabberRPCResonse.m in Sources */,
-				465794311C0412B600347852 /* RegisterViewController.m in Sources */,
 				465793CF1C04092900347852 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
 				465793C21C04092900347852 /* XMPPResourceMemoryStorageObject.m in Sources */,
 				465793DA1C04092900347852 /* XMPPRoom.m in Sources */,
@@ -1486,9 +1660,7 @@
 				465794081C04092900347852 /* XEP_0223.m in Sources */,
 				465794051C04092900347852 /* XMPPAutoTime.m in Sources */,
 				465793B51C04092900347852 /* XMPPParser.m in Sources */,
-				46AB0BD31C0548DD00FB1249 /* RosterController.m in Sources */,
 				465793B41C04092900347852 /* XMPPModule.m in Sources */,
-				4657942E1C0412A600347852 /* LoginViewController.m in Sources */,
 				465793EE1C04092900347852 /* XMPPMessage+XEP_0066.m in Sources */,
 				465793BD1C04092900347852 /* XMPPGroupCoreDataStorageObject.m in Sources */,
 				465794041C04092900347852 /* XMPPPing.m in Sources */,
@@ -1500,19 +1672,22 @@
 				465793D91C04092900347852 /* XMPPMUC.m in Sources */,
 				465793A71C04092900347852 /* XMPPDeprecatedDigestAuthentication.m in Sources */,
 				465793B01C04092900347852 /* XMPPElement.m in Sources */,
+				46008DC71D757AA30040107A /* RegisterViewController.m in Sources */,
 				465793DC1C04092900347852 /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				465793A91C04092900347852 /* XMPPDigestMD5Authentication.m in Sources */,
 				465794021C04092900347852 /* XMPPMessageDeliveryReceipts.m in Sources */,
-				46AB0BD61C05490A00FB1249 /* AddFriendViewController.m in Sources */,
 				465793EF1C04092900347852 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
+				46008DCB1D757AB80040107A /* XMPPManager.m in Sources */,
 				465793B61C04092900347852 /* XMPPPresence.m in Sources */,
 				465793BC1C04092900347852 /* XMPPReconnect.m in Sources */,
 				465793C51C04092900347852 /* XMPPRoster.m in Sources */,
 				465793D71C04092900347852 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				465793AA1C04092900347852 /* XMPPPlainAuthentication.m in Sources */,
 				465793FF1C04092900347852 /* XMPPMessage+XEP_0172.m in Sources */,
+				46008DBF1D757A850040107A /* ChatRoomViewController.m in Sources */,
 				465793E31C04092900347852 /* XMPPvCardTempBase.m in Sources */,
 				465794001C04092900347852 /* XMPPPresence+XEP_0172.m in Sources */,
+				46008DC41D757A980040107A /* LoginViewController.m in Sources */,
 				465793BA1C04092900347852 /* XMPPGoogleSharedStatus.m in Sources */,
 				465794121C04092900347852 /* XMPPSRVResolver.m in Sources */,
 				465793FC1C04092900347852 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
@@ -1531,6 +1706,7 @@
 				465793E41C04092900347852 /* XMPPvCardTempEmail.m in Sources */,
 				465793D81C04092900347852 /* XMPPMessage+XEP0045.m in Sources */,
 				465793BE1C04092900347852 /* XMPPResourceCoreDataStorageObject.m in Sources */,
+				46008DA01D7579300040107A /* ProfileViewController.m in Sources */,
 				4657940C1C04092900347852 /* XMPPMessage+XEP_0308.m in Sources */,
 				465793F91C04092900347852 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				465794131C04092900347852 /* XMPPStringPrep.m in Sources */,
@@ -1642,7 +1818,7 @@
 		};
 		465792611C04089400347852 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23DD3C3C08DEBE6969C7F07E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8AD0597D6BA6CDE745A0BBDE /* Pods-0834XMPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = 0834XMPP/0834XMPP.pch;
@@ -1660,7 +1836,7 @@
 		};
 		465792621C04089400347852 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F679D696B870B3D885F7595 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 75983290AD2337C5C7534B86 /* Pods-0834XMPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = 0834XMPP/0834XMPP.pch;

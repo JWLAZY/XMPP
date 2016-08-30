@@ -16,11 +16,11 @@
 
 //本地地址 - 127.0.0.1
 
-#define  kHostName      @"172.17.32.22"
+#define  kHostName      @"127.0.0.1"
 //openfire服务器端口 默认5222
 #define  kHostPort      5222
 //openfire域名
-#define kDomin @"zhengjianwen"
+#define kDomin @"zhengjianwen.local"
 //resource
 #define kResource @"iOS"
 #endif

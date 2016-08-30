@@ -1,2 +1,4 @@
+target :"0834XMPP" do
 pod 'JDStatusBarNotification', '~> 1.5.2'
 pod 'MBProgressHUD', '~> 0.9.1'
+end
