@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "XMPPStream.h"
+#import "XMPPManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<XMPPStreamDelegate>
 
 @end
 
@@ -23,17 +25,22 @@
     
     //获取到登陆和注册的sb
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoginAndRegister" bundle:nil];
-    
     //取到登陆界面(入口控制器)
     UIViewController *vc = [sb instantiateInitialViewController];
     
+    self.window.rootViewController = vc;
     //在main 的sb 上面模态出来一个登陆界面
-    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
-    
-    
-    
-    
+//    [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
+    XMPPStream *stream =  [[XMPPManager sharedManager] stream];
+    [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     return YES;
+}
+-  (void)loginSuccess{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //取到登陆界面(入口控制器)
+    UIViewController *vc = [sb instantiateInitialViewController];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -56,6 +63,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
+    [self loginSuccess];
 }
 
 @end

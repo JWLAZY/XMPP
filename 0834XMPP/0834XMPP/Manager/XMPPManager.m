@@ -205,7 +205,7 @@ static XMPPManager * manager = nil;
     
     NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
-    
+
 }
 
 

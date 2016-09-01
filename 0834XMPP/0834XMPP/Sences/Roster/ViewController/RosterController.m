@@ -20,10 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     //遵循协议
     [[XMPPManager sharedManager].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
 }
 
 #pragma mark - Table view data source
@@ -40,43 +38,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     XMPPJID *jid = self.rosters[indexPath.row];
     cell.textLabel.text = jid.user;
-    
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Navigation
 
@@ -125,9 +88,6 @@
     NSLog(@"结束接收好友列表");
 //    [self.tableView reloadData];
 }
-
-
-
 - (NSMutableArray *)rosters{
     if (!_rosters) {
         _rosters = [NSMutableArray array];
@@ -143,7 +103,6 @@
     XMPPRoster *roster = [XMPPManager sharedManager].roster;
     NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
- 
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"加" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //同意好友请求
         [roster acceptPresenceSubscriptionRequestFrom:presence.from andAddToRoster:YES];
