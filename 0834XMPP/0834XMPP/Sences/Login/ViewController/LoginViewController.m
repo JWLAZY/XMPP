@@ -35,7 +35,7 @@
 #pragma mark - XMPPStreamDelegate
 //登陆成功
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    NSLog(@"登陆成功");
+    
     //取到登陆控制器,模态消失
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }

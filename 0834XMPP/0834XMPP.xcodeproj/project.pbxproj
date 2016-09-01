@@ -149,6 +149,10 @@
 		465794261C040ABC00347852 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 465794251C040ABC00347852 /* libxml2.tbd */; };
 		465794281C040AC200347852 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465794271C040AC200347852 /* CoreData.framework */; };
 		4657942B1C040E3300347852 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4657942A1C040E3300347852 /* LoginAndRegister.storyboard */; };
+		46D4CE4C1D787493008558F7 /* OutImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D4CE4A1D787493008558F7 /* OutImageCell.m */; };
+		46D4CE4D1D787493008558F7 /* OutImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D4CE4B1D787493008558F7 /* OutImageCell.xib */; };
+		46D4CE511D787705008558F7 /* ReceiveImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D4CE4F1D787705008558F7 /* ReceiveImageCell.m */; };
+		46D4CE521D787705008558F7 /* ReceiveImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D4CE501D787705008558F7 /* ReceiveImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -438,6 +442,12 @@
 		465794271C040AC200347852 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		465794291C040B8600347852 /* 0834XMPP.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 0834XMPP.pch; sourceTree = "<group>"; };
 		4657942A1C040E3300347852 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
+		46D4CE491D787493008558F7 /* OutImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutImageCell.h; sourceTree = "<group>"; };
+		46D4CE4A1D787493008558F7 /* OutImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutImageCell.m; sourceTree = "<group>"; };
+		46D4CE4B1D787493008558F7 /* OutImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutImageCell.xib; sourceTree = "<group>"; };
+		46D4CE4E1D787705008558F7 /* ReceiveImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveImageCell.h; sourceTree = "<group>"; };
+		46D4CE4F1D787705008558F7 /* ReceiveImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveImageCell.m; sourceTree = "<group>"; };
+		46D4CE501D787705008558F7 /* ReceiveImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiveImageCell.xib; sourceTree = "<group>"; };
 		75983290AD2337C5C7534B86 /* Pods-0834XMPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0834XMPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP.release.xcconfig"; sourceTree = "<group>"; };
 		8AD0597D6BA6CDE745A0BBDE /* Pods-0834XMPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-0834XMPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-0834XMPP/Pods-0834XMPP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -597,6 +607,12 @@
 		46008DB31D757A850040107A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46D4CE491D787493008558F7 /* OutImageCell.h */,
+				46D4CE4A1D787493008558F7 /* OutImageCell.m */,
+				46D4CE4B1D787493008558F7 /* OutImageCell.xib */,
+				46D4CE4E1D787705008558F7 /* ReceiveImageCell.h */,
+				46D4CE4F1D787705008558F7 /* ReceiveImageCell.m */,
+				46D4CE501D787705008558F7 /* ReceiveImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1520,8 +1536,10 @@
 				4657925C1C04089400347852 /* LaunchScreen.storyboard in Resources */,
 				465794211C04092900347852 /* build-libidn.sh in Resources */,
 				465792591C04089400347852 /* Assets.xcassets in Resources */,
+				46D4CE4D1D787493008558F7 /* OutImageCell.xib in Resources */,
 				465793AF1C04092900347852 /* copying.txt in Resources */,
 				465792571C04089400347852 /* Main.storyboard in Resources */,
+				46D4CE521D787705008558F7 /* ReceiveImageCell.xib in Resources */,
 				4657941C1C04092900347852 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1624,6 +1642,7 @@
 				465793A81C04092900347852 /* XMPPDeprecatedPlainAuthentication.m in Sources */,
 				46008DC11D757A850040107A /* RosterController.m in Sources */,
 				465793F31C04092900347852 /* NSString+XEP_0106.m in Sources */,
+				46D4CE4C1D787493008558F7 /* OutImageCell.m in Sources */,
 				465793B71C04092900347852 /* XMPPStream.m in Sources */,
 				465793DD1C04092900347852 /* XMPPvCardCoreDataStorage.m in Sources */,
 				465793C31C04092900347852 /* XMPPRosterMemoryStorage.m in Sources */,
@@ -1659,6 +1678,7 @@
 				465793D61C04092900347852 /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
 				465794081C04092900347852 /* XEP_0223.m in Sources */,
 				465794051C04092900347852 /* XMPPAutoTime.m in Sources */,
+				46D4CE511D787705008558F7 /* ReceiveImageCell.m in Sources */,
 				465793B51C04092900347852 /* XMPPParser.m in Sources */,
 				465793B41C04092900347852 /* XMPPModule.m in Sources */,
 				465793EE1C04092900347852 /* XMPPMessage+XEP_0066.m in Sources */,

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="OutImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q4-DE-hJr">
+                        <rect key="frame" x="10" y="10" width="34" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="K0b-VH-qOc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cvb-Gk-LgJ">
+                        <rect key="frame" x="69" y="10" width="146" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="A4P-TS-YFV"/>
+                            <constraint firstAttribute="width" secondItem="Cvb-Gk-LgJ" secondAttribute="height" multiplier="146:81" id="nuC-Bk-JWV"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Cvb-Gk-LgJ" secondAttribute="bottom" constant="7" id="9pZ-wr-ICX"/>
+                    <constraint firstItem="3Q4-DE-hJr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="AF7-rq-OqE"/>
+                    <constraint firstItem="3Q4-DE-hJr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dVO-xv-1GS"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3Q4-DE-hJr" secondAttribute="bottom" constant="10" id="dzu-po-jgS"/>
+                    <constraint firstItem="Cvb-Gk-LgJ" firstAttribute="top" secondItem="3Q4-DE-hJr" secondAttribute="top" id="jbM-E4-0qo"/>
+                    <constraint firstItem="Cvb-Gk-LgJ" firstAttribute="leading" secondItem="3Q4-DE-hJr" secondAttribute="trailing" constant="25" id="kOD-B2-wUh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentImageView" destination="Cvb-Gk-LgJ" id="yhL-9H-Wt3"/>
+                <outlet property="nameLable" destination="3Q4-DE-hJr" id="stt-U6-IWm"/>
+            </connections>
+            <point key="canvasLocation" x="447" y="423.5"/>
+        </tableViewCell>
+    </objects>
+</document>

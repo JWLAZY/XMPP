@@ -7,6 +7,8 @@
 //
 
 #import "XMPPManager.h"
+#import "AppDelegate.h"
+#import "JDStatusBarNotification.h"
 
 typedef enum : NSUInteger {
     Connect4Login,
@@ -153,7 +155,7 @@ static XMPPManager * manager = nil;
             [_stream registerWithPassword:self.regPassword error:nil];
             break;
         default:
-            NSLog(@"一定是忘记 记录链接目的了");
+            NSLog(@"一定是忘记 记录链接目的了"); 
             break;
     }
 }
@@ -175,7 +177,7 @@ static XMPPManager * manager = nil;
 
 //登陆成功的回调事件
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    NSLog(@"登陆成功");
+//    NSLog(@"登陆成功");
     
     //出席消息(上线通知)
     XMPPPresence *presence = [XMPPPresence presenceWithType:@"available"];
@@ -205,8 +207,10 @@ static XMPPManager * manager = nil;
     
     NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
     UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
-
+    [[[[UIApplication sharedApplication].delegate window] rootViewController] showViewController:ac sender:nil];
 }
-
+-(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
+    [JDStatusBarNotification showWithStatus:@"收到一条消息" dismissAfter:2];  
+}
 
 @end

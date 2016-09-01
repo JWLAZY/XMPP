@@ -56,6 +56,7 @@
     XMPPJID *jid = self.rosters[index.row];
     //4. 将获取的xmppjid 传到下个页面
     ChatRoomViewController *crvc = [segue destinationViewController];
+    crvc.hidesBottomBarWhenPushed = YES;
     crvc.jidChatTo = jid;
 }
 
