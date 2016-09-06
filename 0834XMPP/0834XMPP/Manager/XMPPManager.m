@@ -62,7 +62,7 @@ static XMPPManager * manager = nil;
         XMPPRosterCoreDataStorage *xrcds = [XMPPRosterCoreDataStorage sharedInstance];
         
         //创建roster 花名册时,需要给花名册指定一个数据存储的地方(有就是XMPPRosterCoreDataStorage)
-        self.roster = [[XMPPRoster alloc] initWithRosterStorage:xrcds dispatchQueue:dispatch_get_main_queue()];
+        self.roster = [[XMPPRoster alloc] initWithRosterStorage:xrcds dispatchQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)];
         
         //在通讯管道中激活花名册
         //这时就可以通过通讯管道去给服务器发送请求了.
@@ -77,7 +77,7 @@ static XMPPManager * manager = nil;
         
         //xmppMessageArchiving 主要功能: 1. 通过通讯管道获取到服务器发送过来的消息,2.讲消息存储到指定的XMPPMessageArchivingCoreDataStorage
         
-        //xmpp 为我们提供的一个存储聊天消息的coredata仓库
+        //xmpp 为我们提 供的一个存储聊天消息的coredata仓库
         XMPPMessageArchivingCoreDataStorage *xmacds = [XMPPMessageArchivingCoreDataStorage sharedInstance];
         
         //初始化时,需要给这个归档类指定一个存储仓库.
@@ -198,17 +198,21 @@ static XMPPManager * manager = nil;
     NSLog(@"注册失败 ,error:%@",error);
 }
 
-
 #pragma mark - XMPPRosterDelegate
+
+- (void)xmppRoster:(XMPPRoster *)sender didReceiveRosterItem:(DDXMLElement *)item{
+    
+}
 
 //接收到好友请求
 - (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
-    NSLog(@"%@",presence);
     
-    NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
-    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [[[[UIApplication sharedApplication].delegate window] rootViewController] showViewController:ac sender:nil];
+    
+//    NSString *message = [NSString stringWithFormat:@"%@请求添加你为好友",presence.from.user];
+//    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"好友请求" message:message preferredStyle:UIAlertControllerStyleAlert];
+//    [[[[UIApplication sharedApplication].delegate window] rootViewController] showViewController:ac sender:nil];
 }
+
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
     [JDStatusBarNotification showWithStatus:@"收到一条消息" dismissAfter:2];  
 }

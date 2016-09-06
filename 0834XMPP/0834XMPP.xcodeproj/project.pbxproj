@@ -1841,6 +1841,7 @@
 			baseConfigurationReference = 8AD0597D6BA6CDE745A0BBDE /* Pods-0834XMPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = 0834XMPP/0834XMPP.pch;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2\n";
 				INFOPLIST_FILE = 0834XMPP/Info.plist;
@@ -1859,6 +1860,7 @@
 			baseConfigurationReference = 75983290AD2337C5C7534B86 /* Pods-0834XMPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = 0834XMPP/0834XMPP.pch;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2\n";
 				INFOPLIST_FILE = 0834XMPP/Info.plist;

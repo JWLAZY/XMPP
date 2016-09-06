@@ -36,7 +36,8 @@
     
     //设置断言
     //查找所有和当前聊天对象一样的message 对象
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" bareJidStr == %@ ",self.jidChatTo.bare];
+    XMPPJID *myjid = [[[XMPPManager sharedManager] stream] myJID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" bareJidStr == %@  and streamBareJidStr == %@ ",self.jidChatTo.bare,myjid.bare];
     
     //让断言生效
     [fetchRequest setPredicate:predicate];
@@ -53,7 +54,9 @@
     [self.messages addObjectsFromArray:array];
     
     [self.tableView reloadData];
-     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    if (self.messages.count  > 1) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    }
 }
 
 - (void)viewDidLoad {
@@ -70,7 +73,6 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     //通过通知中心来观察键盘的frame 的变化,当键盘frame 发送变化后触发keyboardFrameChange事件
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
-    
     //加载之前的数据
     [self reloadAllMessage];
 }
@@ -83,19 +85,22 @@
     CGFloat height = self.view.frame.size.height - rect.origin.y;
     
     self.constraint4bottomFromSuper.constant = height;
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    if (self.messages.count  > 1) {
+//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        [UIView animateWithDuration:0.5 animations:^{
+                self.tableView.contentOffset = CGPointMake(0,  self.tableView.contentSize.height - rect.origin.y + 110) ;
+        }];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
+
+
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -113,12 +118,12 @@
     
     XMPPMessageArchiving_Message_CoreDataObject *message = self.messages[indexPath.row];
     //判断是否是自己发出去的.
-    if (![[message.message type] isEqualToString:@"image"]) {
+    if (![[message.message body] isEqualToString:@"image"]) {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
             if ([message isOutgoing]) {
                 cell.textLabel.text = [NSString stringWithFormat:@"我 : %@",message.body];
             }else{
-                cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@",message.bareJidStr,message.body];
+                cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@",message.bareJid.user,message.body];
             }
             return cell;
     }else {
@@ -165,16 +170,25 @@
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    NSData *data = UIImagePNGRepresentation(image);
+    NSData *data = UIImagePNGRepresentation([self croppIngimageByImageName:image toRect:CGRectMake(0, 0, 300,200 )]);
     
     XMPPStream *stream = [XMPPManager sharedManager].stream;
-    XMPPMessage *message = [XMPPMessage messageWithType:@"image" to:self.jidChatTo];
+    XMPPMessage *message = [XMPPMessage messageWithType:@"chat" to:self.jidChatTo];
     [message addBody:@"image"];
     NSString *base64str = [data base64EncodedStringWithOptions:0];
     XMPPElement *attachment = [XMPPElement elementWithName:@"attachment" stringValue:base64str];
     [message addChild:attachment];
     [stream sendElement:message];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (UIImage *)croppIngimageByImageName:(UIImage *)imageToCrop toRect:(CGRect)rect
+{
+    //CGRect CropRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height+15);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([imageToCrop CGImage], rect);
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    return cropped;
 }
 #pragma mark - lazy load
 - (NSMutableArray *)messages{

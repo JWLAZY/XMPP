@@ -10,7 +10,7 @@
 #import "XMPPManager.h"
 #import "ChatRoomViewController.h"
 
-@interface RosterController ()<XMPPRosterDelegate>
+@interface RosterController ()<XMPPRosterDelegate,XMPPStreamDelegate>
 //用来存放所有好友
 @property (nonatomic,strong) NSMutableArray * rosters;
 
@@ -22,8 +22,8 @@
     [super viewDidLoad];
     //遵循协议
     [[XMPPManager sharedManager].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [[XMPPManager sharedManager].stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -61,15 +61,24 @@
 }
 
 #pragma mark - XMPPRosterDelegate
+
+-(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    NSLog(@"%@,%@",[presence fromStr],presence.type);
+}
+
 //开始接收好友列表
 - (void)xmppRosterDidBeginPopulating:(XMPPRoster *)sender{
     NSLog(@"开始接收好友列表");
 }
 //没接收到一个好友就会走一次这个方法
 -(void)xmppRoster:(XMPPRoster *)sender didReceiveRosterItem:(DDXMLElement *)item{
+    NSLog(@"%@",item);
     //    <item jid="123@zhengjianwen" name="123" subscription="both"><group>Friends</group></item>
     //通过xml 获取到jid
     //注意获取到item 的属性和节点的问题.
+    if (![[[item attributeForName:@"subscription"] stringValue] isEqualToString:@"both"]) {
+        return;
+    }
     NSString *jid = [[item attributeForName:@"jid"] stringValue];
     //通过jid 创建一个xmppjid 类
     XMPPJID *xmppjid = [XMPPJID jidWithString:jid resource:kResource];
@@ -87,7 +96,6 @@
 
 -(void)xmppRosterDidEndPopulating:(XMPPRoster *)sender{
     NSLog(@"结束接收好友列表");
-//    [self.tableView reloadData];
 }
 - (NSMutableArray *)rosters{
     if (!_rosters) {
@@ -95,7 +103,6 @@
     }
     return _rosters;
 }
-
 //接收到好友请求
 - (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
     NSLog(@"%@",presence);
