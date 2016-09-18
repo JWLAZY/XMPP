@@ -10,6 +10,7 @@
 #import "XMPPStream.h"
 #import "XMPPManager.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     // 这个方法会让self.window的rootviewcontroller指向main 的 入口控制器
     [self.window makeKeyAndVisible];
     

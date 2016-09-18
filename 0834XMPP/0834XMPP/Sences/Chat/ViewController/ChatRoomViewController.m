@@ -13,7 +13,9 @@
 
 @interface ChatRoomViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,XMPPStreamDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *view4ChatContent;
+//手拖的约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint4bottomFromSuper;
+
 @property (weak, nonatomic) IBOutlet UITextField *txt4Chat;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)action4SendMessage:(id)sender;
@@ -84,7 +86,9 @@
     //计算出聊天窗口的底部偏移量
     CGFloat height = self.view.frame.size.height - rect.origin.y;
     
+    //改变约束的值
     self.constraint4bottomFromSuper.constant = height;
+    
     if (self.messages.count  > 1) {
 //        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
         [UIView animateWithDuration:0.5 animations:^{

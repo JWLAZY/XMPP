@@ -16,7 +16,7 @@
 
 //本地地址 - 127.0.0.1
 
-#define  kHostName      @"192.168.199.218"
+#define  kHostName      @"127.0.0.1"
 //openfire服务器端口 默认5222
 #define  kHostPort      5222
 //openfire域名
